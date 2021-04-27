@@ -1,0 +1,9 @@
+Button {
+    -fx-background-size: 100% 100%;
+}
+
+/*  defines what happens when I hover over a Button with mouse cursor */
+Button:hover{
+
+    -fx-background-size: 105% 105%;
+}

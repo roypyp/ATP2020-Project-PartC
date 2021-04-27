@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-image: url(Images/FirstSenece.jpg); -fx-background-color: black; -fx-background-size: 100% 100%;" stylesheets="@firstScene.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.firstSceneController">
+   <children>
+      <Button fx:id="btn_newGame" layoutX="182.0" layoutY="983.0" mnemonicParsing="false" onAction="#newGameClicked" prefHeight="82.0" prefWidth="259.0"  text="New Game" textFill="#191313ed" AnchorPane.bottomAnchor="14.599999999999909">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="36.0" />
+         </font></Button>
+         </children>
+</AnchorPane>

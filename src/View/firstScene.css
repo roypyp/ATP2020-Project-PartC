@@ -1,0 +1,17 @@
+.root{
+    -fx-background-size: cover;
+}
+Button{
+    -fx-text-fill: black;
+    -fx-border-color: white;
+    -fx-background-color: lightblue;
+    -fx-border-style: solid;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+Button:hover{
+    -fx-text-fill: red;
+    -fx-border-color: transparent;
+    -fx-background-color: lightblue;
+    -fx-border-style: solid;
+    -fx-border-width: 0px 0px 2px 0px;
+}

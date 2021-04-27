@@ -1,0 +1,1 @@
+      <Button fx:id="captainButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="107.0" layoutY="106.0" mnemonicParsing="false"   pickOnBounds="true" prefHeight="95.0" prefWidth="91.0" scaleShape="true" style="-fx-background-image: url(Images/cap.png); -fx-background-size: 100% 100%;" />

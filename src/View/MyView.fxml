@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import View.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#KeyPressed" stylesheets="@ViewStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+    <left>
+        <VBox prefHeight="200.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints />
+                    </rowConstraints>
+                    <Label text="Maze rows:" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label text="Maze columns:" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtfld_rowsNum" disable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtfld_colsNum" disable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Button fx:id="btn_generateMaze" onAction="#generateMaze" prefHeight="25.0" prefWidth="167.0" text="Generate Maze" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                    <Button onAction="#solveMaze" prefHeight="25.0" prefWidth="167.0" text="Solve Maze" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                    <Button onAction="#MuteMaze" prefHeight="25.0" prefWidth="167.0" text="Mute" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                    <Label text="Player row:" textFill="#f8f6f6" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <Label text="Player column:" textFill="#fffefe" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <Label fx:id="lbl_playerRow" text="#" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <Label fx:id="lbl_playerColumn" text="#" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                </GridPane>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Status bar" />
+            </children>
+        </HBox>
+    </bottom>
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem fx:id="newMaze" mnemonicParsing="false" onAction="#New" text="New" />
+                        <MenuItem fx:id="SaveButton" mnemonicParsing="false" onAction="#Save" text="Save" />
+                        <MenuItem fx:id="LoadButton" mnemonicParsing="false" onAction="#Load" text="Load" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Options">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#openConfigurations" text="Properties" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#HelpClicked" text="Game Instructions" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="About">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#About" text="Information" />
+                    </items>
+                  </Menu>
+                  <Menu id="exitMenu" mnemonicParsing="false" text="Exit">
+                    <items>
+                      <MenuItem id="exitTheGame" mnemonicParsing="false" onAction="#exit" text="exit the game " />
+                    </items>
+                  </Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <Pane fx:id="pane" onScroll="#setOnScroll" style="-fx-background-image: url(Images/darkSpaceBackground.png); -fx-background-size: cover;" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+            </BorderPane.margin>
+            <children>
+                <MazeDisplayer fx:id="mazeDisplayer" bethIMG="resources/Images/beth.png" height="561.0" imageFileNameFlag="resources/Images/szechuan sauce.png" imageFileNameSolution="resources/Images/footprints.jpg" imageFileNameWall="resources/Images/wall.jpg" jerryIMG="resources/Images/jerry.png" mortyIMG="resources/Images/morty.png" onMouseClicked="#mouseClicked" onMouseDragged="#mouseDragged" poopybuttIMG="resources/Images/mrpoopybutt.png" rickIMG="resources/Images/rick.png" summerIMG="resources/Images/summer.png" victoryImage="resources/Images/victory.jpg" width="600.0" BorderPane.alignment="CENTER" />
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Pane>
+    </center>
+</BorderPane>
